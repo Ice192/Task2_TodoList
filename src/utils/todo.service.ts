@@ -7,3 +7,7 @@ export const createTodo = async (text: string, userId: string) => {
         user: userId,
     })
 }
+
+export const getTodoByUser = async (userID: string) => {
+    return await Todo.find({user: userID}).sort({createdAt:-1})
+}
