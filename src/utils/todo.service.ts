@@ -22,8 +22,8 @@ export const getTodoByUser = async (
 }
 
 //Menghapus todo berdasarkan id dan user
-export const deleteTodo = async (userId: string, todoId: string) => {
-    const todo = await Todo.findByIdAndDelete({
+export const deleteTodo = async (todoId: string, userId: string) => {
+    const todo = await Todo.findOneAndDelete({
         _id: todoId,
         user: userId
     }) //“Ambil todo ini, TAPI hanya kalau dia milik user ini”
@@ -51,3 +51,4 @@ export const updateTodo = async (todoId: string, userId: string, data: {text?: s
 
     return await todo.save() // menyimpan perubahan ke database
 }
+

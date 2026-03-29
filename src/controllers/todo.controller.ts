@@ -51,7 +51,7 @@ export const delTodosHandler = async (req: any, res: Response) => {
   try {
     const {id} = req.params
 
-    const deletedTodo = await deleteTodo (id, req.user._id)
+    const deletedTodo = await deleteTodo (id, req.user.id)
 
     if (!deletedTodo) {
       return res.status(404).json({message: "Todo not Found"})
