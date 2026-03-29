@@ -1,4 +1,4 @@
-import mongoose, {Schema, Document} from "mongoose";
+﻿import mongoose, {Schema, Document} from "mongoose";
 
 export interface UserDocument extends Document {
     name: string;
@@ -12,6 +12,10 @@ const userSchema = new Schema<UserDocument> (
     email: { type: String, required:true, unique: true},
     password: {type: String, required:true},
     },
-    {timestamps:true}
+    {timestamps:true} //Tambahin field createdAt & updatedAt otomatis di Mongo DB
 )
-export const User = mongoose.model<UserDocument>("User", userSchema);
+export const User = mongoose.model<UserDocument>("User", userSchema); //Buat alat bernama User berdasarkan userSchema
+
+//kursor find 1 and find many
+//CRUUD
+//

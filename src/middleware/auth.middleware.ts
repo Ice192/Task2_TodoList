@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+﻿import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
 export const protect = (req: any, res: Response, next: NextFunction) => {
