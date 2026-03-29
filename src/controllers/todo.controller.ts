@@ -16,7 +16,17 @@ export const createTodoHandler = async (req: any, res: Response) => {
 
 export const getTodosHandler = async (req: any, res: Response) => {
   try {
-    const todos = await getTodoByUser(req.user.id)
+    const page = Number(req.query.page)
+    const limit = Number(req.query.limit) //karena GET menggunakan query (?page, ?limit)
+
+    const finalPage = isNaN(page) || page < 1 ? 1 : page; //Jika page bukan angka atau kurang dari 1, maka gunakan 1, jika tidak gunakan nilai page.
+    const finalLimit = isNaN(limit) || limit < 1 ? 10 : limit; //Jika limit bukan angka atau kurang dari 1, maka gunakan 10, jika tidak gunakan nilai limit.
+
+    const todos = await getTodoByUser(
+      req.user.id,
+      finalPage,
+      finalLimit
+    )
 
     res.json(todos)
   } catch (error) {

@@ -7,8 +7,18 @@ export const createTodo = async (text: string, userId: string) => {
     })
 }
 
-export const getTodoByUser = async (userId: string) => {
-    return await Todo.find({user: userId}).sort({createdAt: -1})
+export const getTodoByUser = async (
+    userId: string,
+    page: number,
+    limit: number
+
+) => {
+    const skip = (page - 1) * limit //melewati data sebelumnya
+
+    return await Todo.find({user: userId})
+        .skip(skip)
+        .limit(limit)
+        .sort({createdAt: -1})
 }
 
 //Menghapus todo berdasarkan id dan user
