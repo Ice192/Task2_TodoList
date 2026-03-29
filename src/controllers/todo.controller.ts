@@ -65,7 +65,7 @@ export const upTodoshandler = async (req: any, res: Response) => {
       req.body
     )
 
-    if (!updateTodo){
+    if (!updatedTodo){
       return res.status(404).json({message:"Todo not found"})
     }
 
