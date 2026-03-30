@@ -14,8 +14,4 @@ const userSchema = new Schema<UserDocument> (
     },
     {timestamps:true} //Tambahin field createdAt & updatedAt otomatis di Mongo DB
 )
-export const User = mongoose.model<UserDocument>("User", userSchema); //Buat alat bernama User berdasarkan userSchema
-
-//kursor find 1 and find many
-//CRUUD
-//
+export const User = mongoose.model<UserDocument>("User", userSchema); //Buat model bernama User berdasarkan userSchema

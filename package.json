@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev src/Server.ts"
+    "dev": "ts-node-dev backend/src/Server.ts",
+    "dev:backend": "ts-node-dev backend/src/Server.ts",
+    "dev:frontend": "npm --prefix frontend run dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
