@@ -12,7 +12,8 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
-    "vue": "beta"
+    "vue": "beta",
+    "vue-router": "^5.0.4"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.4",
